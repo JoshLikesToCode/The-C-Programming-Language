@@ -1,4 +1,4 @@
-/* Write versions of the library functions strncpy, strncat, and strncmp,
+/* Write versions of the library functions strncpy and strncmp,
  * which operate on at most the first n characters of their arguement strings.
  * For example, strncpy(s,t,n) copies at most the n characters of t to s. */
 #include <stdio.h>
@@ -91,19 +91,6 @@ char* my_strncpy(char* s, char* t, int n)
  * and returns value < 0 if s is less than t and returns value > 0 if t is less than s */
 int my_strcmp(char* s, char* t, int n)
 {
-	
-	//char comp_s[n+1];
-	//char comp_t[n+1];
-
-	/* copy n characters of s into comp_s */
-	//for(int i = 0; i < n; i++)
-	//	comp_s[i] = s[i];
-	//comp_s[i] = '\0';
-	/* copy n characters of t into comp_t */
-	//for(int i = 0; i < n; i++)
-	//	comp_t[i] = t[i];
-	//comp_t[i] = '\0';
-
 	int s_is_more = 0, t_is_more = 0;
 	for(int i = 0; i < n; i++)
 	{
