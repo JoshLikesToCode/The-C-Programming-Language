@@ -1,7 +1,8 @@
 /**************************************************************
 * Exercise 6-4: Write a program that prints the distinct words
 * in it's input sorted into decreasing order of frequency of 
-* occurence. Precede each word by it's count.
+* occurence. Precede each word by it's count. I added an extra
+* challenge to this program by making it multi-threaded.
 **************************************************************/
 
 #include <sys/types.h>
