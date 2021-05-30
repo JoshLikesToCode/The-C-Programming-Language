@@ -2,7 +2,7 @@
 * Write a cross-referencer that prints a list of all words in a
 * document, and, for each word, a list of the line numbers on
 * which it occurs. I added extra challenge by making this program
-* multi-threaded.
+* multi-threaded..
 **************************************************************/
 
 #include <sys/types.h>
