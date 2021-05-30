@@ -22,7 +22,6 @@
 
 
 
-/* I may find this useful */
 char * delim = "\"\'.“”‘’?:;-,—*($%)! \t\x0A\r";
 
 /* mutex lock */
@@ -167,9 +166,6 @@ void* threads_process(void* ptr)
 
 int main (int argc, char *argv[])
     {
-
-    // ***TO DO***  Look at arguments, open file, divide by threads
-    //             Allocate and Initialize and storage structures
 	int fd, i = 0, proc_count = atoi(argv[2]);
 	file_info* data;
 	pthread_t* threads;
@@ -192,15 +188,11 @@ int main (int argc, char *argv[])
 	close(fd);
 
 
-    // **************************************************************
-    // DO NOT CHANGE THIS BLOCK
     //Time stamp start
     struct timespec startTime;
     struct timespec endTime;
 
     clock_gettime(CLOCK_REALTIME, &startTime);
-    // **************************************************************
-    // *** TO DO ***  start your thread processing
     //                wait for the threads to finish
 	data = malloc(sizeof(file_info) * proc_count);
 	if(data == NULL)
@@ -241,7 +233,7 @@ int main (int argc, char *argv[])
 		pthread_join(threads[i++], NULL);
 	}
 
-    // ***TO DO *** Process TOP 10 and display
+    // Process TOP 10 and display
 	for(int i = 0; i < container_count; i++)
 	{
 		printf("%s appeared on line numbers: ", words_container[i].word);
@@ -252,8 +244,6 @@ int main (int argc, char *argv[])
 
 	printf("count = %d\n", 8*count);
 
-    //**************************************************************
-    // DO NOT CHANGE THIS BLOCK
     //Clock output
     clock_gettime(CLOCK_REALTIME, &endTime);
     time_t sec = endTime.tv_sec - startTime.tv_sec;
@@ -265,10 +255,7 @@ int main (int argc, char *argv[])
         }
 
     printf("Total Time was %ld.%09ld seconds\n", sec, n_sec);
-    //**************************************************************
-
-
-    // ***TO DO *** cleanup
+    // cleanup
 	i = 0;
 	while(i < container_count)
 	{
